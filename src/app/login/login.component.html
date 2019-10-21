@@ -1,0 +1,40 @@
+
+<div *ngIf='form_error' class="error-msg">
+    {{form_error_msg}}
+</div>
+
+<div class="frm-blk">
+    <div class="frm-title">
+        Register
+    </div>
+    <form *ngIf='!reg_complete' (ngSubmit)="submitReg()" #login="ngForm">
+        <label>Email</label>
+            <input type="text" [(ngModel)]="reg_email" name="reg_email"/>
+        <label>Password</label>  
+            <input type="password" [(ngModel)]="reg_pass" name="reg_pass"/>
+            
+            <input type="submit" class="frm-sub-btn" value="Submit"/>
+    </form>
+    <div *ngIf='reg_complete' class="frm-scess-msg">
+        Registration Complete, Please Login
+    </div>
+</div>
+
+
+<div class="frm-blk">
+    <div class="frm-title">
+        Login
+    </div>
+    <form *ngIf='!login_complete' (ngSubmit)="submitLogin()" #login="ngForm">
+        <label>Email</label>
+            <input type="text" [(ngModel)]="login_email" name="login_email"/>
+        <label>Password</label>  
+            <input type="password" [(ngModel)]="login_pass" name="login_pass" />  
+            
+            <input type="submit" class="frm-sub-btn" value="Submit"/>            
+    </form>
+    
+    <div *ngIf='login_complete' class="frm-scess-msg">
+        You have loggedin
+    </div>    
+</div>

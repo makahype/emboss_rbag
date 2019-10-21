@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+html,body{
+    margin: 0px;
+    padding: 0px;
+}
+
+section.main{
+    width: 100%;
+    padding: 50px;
+}
+
+.top-menu{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin: 0px;
+    display: inline-block;
+    list-style: none;    
+    margin-bottom: 10px;
+}
+
+.top-menu .item{
+    float: left;
+    padding: 5px;
+    font-size: 20px;
+    list-style: none;
+    background-color: #82eed1;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;    
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+
+section.content-blk{
+    width: 100%;
+    display: inline-block;
+}

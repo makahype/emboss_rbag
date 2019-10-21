@@ -1,0 +1,25 @@
+<section class="main">
+    
+    <ul class="top-menu">
+        <li class="item" (click)="screen('login')">Login</li>
+        <li class="item" (click)="screen('note')">Create Note</li>
+        <li class="item" (click)="screen('list')">List</li>        
+    </ul>
+    <router-outlet></router-outlet>
+    
+    <section class="content-blk" [ngSwitch]="mode">
+        <div *ngSwitchCase="'login'">
+            <app-login></app-login>             
+        </div>
+        <div *ngSwitchCase="'note'">
+            <app-note></app-note> 
+        </div>
+        <div *ngSwitchCase="'list'">
+            <app-notelist></app-notelist> 
+        </div>       
+        <div *ngSwitchDefault>
+            <app-login></app-login>
+        </div>       
+    </section>            
+
+</section>
