@@ -7,12 +7,17 @@ import { ApiService } from '../api.service';
   styleUrls: ['./notelist.component.css']
 })
 export class NotelistComponent implements OnInit {
+  note_list = [];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    console.log('test');
-    console.log(this.apiService.getNoteList());
+
+    var notelist_res = this.apiService.getNoteList();
+
+    notelist_res.subscribe((data: any) => {
+        this.note_list = data;
+    });
 
   }
 

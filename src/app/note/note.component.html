@@ -1,1 +1,17 @@
-<p>note works!</p>
+<div class="frm-blk">
+    <div class="frm-title">
+        Create a Note
+    </div>
+    <form (ngSubmit)="saveNote()" #note="ngForm">
+        <label>Title</label>
+        <input type="text" [(ngModel)]="nt_title" name="nt_title"/>
+            
+        <label>Content</label>
+        <textarea name="nt_content"  [(ngModel)]="nt_content"></textarea>
+            
+        <input type="submit" class="frm-sub-btn" value="Submit"/>
+    </form>
+    <div *ngIf='ntfrm_complete' class="frm-scess-msg">
+        Note Saved
+    </div>
+</div>

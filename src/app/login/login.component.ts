@@ -18,10 +18,10 @@ export class LoginComponent implements OnInit {
     form_error_msg = "";
 
 
-  constructor(private apiService: ApiService) { }
+    constructor(private apiService: ApiService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
     submitReg(){
 
@@ -41,13 +41,15 @@ export class LoginComponent implements OnInit {
 
     submitLogin(){
 
-        var login_result = this.apiService.performReg({user: {email: this.login_email, password: this.login_pass,
-        password_confirmation: this.login_pass}});
+        var login_result = this.apiService.performLogin({email: this.login_email, password: this.login_pass});
 
         login_result.subscribe((data: any) => {
             if(data.created){
                 this.login_complete = true;
                 this.form_error = false;
+
+                this.apiService.user_loggedin.next(true);
+
             }else{
                 this.form_error = true;
                 this.form_error_msg = "Login failed, please try again"

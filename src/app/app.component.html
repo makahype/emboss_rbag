@@ -1,5 +1,8 @@
 <section class="main">
     
+    <div *ngIf="is_loggedin">
+        You are logged in
+    </div>
     <ul class="top-menu">
         <li class="item" (click)="screen('login')">Login</li>
         <li class="item" (click)="screen('note')">Create Note</li>
