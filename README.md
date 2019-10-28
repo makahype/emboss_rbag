@@ -2,7 +2,7 @@
 Ruby and Angular source files. An implementation of using angular and ruby together.
 
 ## files: 
-- src: angular source files
+- angular_src: angular source files
 - ruby_src: ruby source files
 
 
@@ -16,6 +16,7 @@ Ruby and Angular source files. An implementation of using angular and ruby toget
 
 
 ## todos:
+- generate more consistent way to communicate state between server first page load and subsiquent state updates
 - create mode where angular ajax calls can be mocked outside ruby env
 - automate movement of angular files into ruby  code base
 - create frontend lib to handle csrf

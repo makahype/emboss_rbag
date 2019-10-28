@@ -7,10 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
 
-    public user_loggedin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
     constructor(private http: HttpClient) { }
-
 
     getNoteList() {
       return this.http.get("http://localhost:3000/endpoints/user_notes");
@@ -42,5 +39,12 @@ export class ApiService {
       return (<HTMLInputElement>document.getElementById('auth_token')).value;
     }
 
+    getLoginStatus(){
+        return (<HTMLInputElement>document.getElementById('login_status')).value;
+    }
+
+    getWindow() : any {
+        return window;
+    }
 
 }

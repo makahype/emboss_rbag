@@ -45,10 +45,8 @@ export class LoginComponent implements OnInit {
 
         login_result.subscribe((data: any) => {
             if(data.created){
-                this.login_complete = true;
-                this.form_error = false;
-
-                this.apiService.user_loggedin.next(true);
+                //refresh the page
+                this.apiService.getWindow().location.href = "/";
 
             }else{
                 this.form_error = true;

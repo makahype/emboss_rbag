@@ -4,7 +4,7 @@
         You are logged in
     </div>
     <ul class="top-menu">
-        <li class="item" (click)="screen('login')">Login</li>
+        <li *ngIf="!is_loggedin" id="login_tab" class="item" (click)="screen('login')">Login</li>
         <li class="item" (click)="screen('note')">Create Note</li>
         <li class="item" (click)="screen('list')">List</li>        
     </ul>

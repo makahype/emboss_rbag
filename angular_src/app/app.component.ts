@@ -12,14 +12,17 @@ export class AppComponent {
 
   constructor(private apiService: ApiService) { 
 
-    this.apiService.user_loggedin.subscribe( value => {
-        this.is_loggedin = value;
-        
-        //bypass logged in section if 
-        if(value){
-            this.mode = "note"
-        }
-    });
+
+    //read data from page to check login status
+    let login_status = this.apiService.getLoginStatus()
+
+    //bypass logged in section if user is loggedin 
+    if(login_status == '1'){
+        this.mode = "note"
+        this.is_loggedin = true;
+    }else{
+        this.is_loggedin = false;
+    }
 
   }
 
