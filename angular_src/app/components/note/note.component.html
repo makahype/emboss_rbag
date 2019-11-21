@@ -1,4 +1,8 @@
 <div class="frm-blk">
+    <div *ngIf='ntfrm_complete' class="frm-scess-msg">
+        Note Saved
+    </div>
+    
     <div class="frm-title">
         Create a Note
     </div>
@@ -11,7 +15,4 @@
             
         <input type="submit" class="frm-sub-btn" value="Submit"/>
     </form>
-    <div *ngIf='ntfrm_complete' class="frm-scess-msg">
-        Note Saved
-    </div>
 </div>

@@ -7,32 +7,33 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
 
+    host = "http://localhost:3000";
     constructor(private http: HttpClient) { }
 
     getNoteList() {
-      return this.http.get("http://localhost:3000/endpoints/user_notes");
+      return this.http.get("/endpoints/user_notes");
     }
 
     performReg(user_data) {
       user_data.authenticity_token = this.getAuthToken();
 
-      return this.http.post("http://localhost:3000/users",user_data,{});
+      return this.http.post(this.host+"/users",user_data,{});
     }
 
     performLogin(user_data) {
       user_data.authenticity_token = this.getAuthToken();
 
-      return this.http.post("http://localhost:3000/sessions",user_data,{});
+      return this.http.post(this.host+"/sessions",user_data,{});
     }
 
     createNote(note_data) {
       note_data.authenticity_token = this.getAuthToken();
 
-      return this.http.post("http://localhost:3000/notes",note_data,{});
+      return this.http.post(this.host+"/notes",note_data,{});
     }
 
     getNotes() {
-      return this.http.get("http://localhost:3000/notes/user_notes");
+      return this.http.get(this.host+"/notes/user_notes");
     }
 
     getAuthToken(){

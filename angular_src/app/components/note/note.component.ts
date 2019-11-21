@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-note',
@@ -22,7 +22,7 @@ export class NoteComponent implements OnInit {
         content: this.nt_content}});
 
         ntcreate_result.subscribe((data: any) => {
-            //clear data
+            //clear form data
             this.nt_title = "";
             this.nt_content = "";
             this.ntfrm_complete = true;

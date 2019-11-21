@@ -5,9 +5,9 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NotelistComponent } from './notelist/notelist.component';
-import { NoteComponent } from './note/note.component';
+import { LoginComponent } from './components/login/login.component';
+import { NotelistComponent } from './components/notelist/notelist.component';
+import { NoteComponent } from './components/note/note.component';
 
 @NgModule({
   declarations: [

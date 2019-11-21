@@ -12,7 +12,6 @@ export class AppComponent {
 
   constructor(private apiService: ApiService) { 
 
-
     //read data from page to check login status
     let login_status = this.apiService.getLoginStatus()
 
